@@ -118,7 +118,7 @@ a, a:focus, a:hover {
 
 h1, h2, h3,
 h4, h5, h6 {
-  font-family: "Caveat Brush", cursive;
+  font-family: "Caveat", cursive;
   color: #222222;
   line-height: 1.2em !important;
   margin-bottom: 0;
@@ -2058,7 +2058,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 992px) {
   .default-header {
-    background-color: #222;
+    background-color: #591902;
   }
 }
 
@@ -2071,7 +2071,7 @@ h1, h2, h3, h4, h5, h6 {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  background-color: #222;
+  background-color: #591902;
 }
 
 .dropdown-item {
@@ -2761,5 +2761,10 @@ h6 {
 }
 
 .color-primary{
-  color: #F2C185;
+color: #FFFFFF;
+}
+
+.blur {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
