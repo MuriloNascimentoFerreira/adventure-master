@@ -115,11 +115,14 @@ a, a:focus, a:hover {
 .gray-bg {
   background: #f9f9ff;
 }
+p {
+  font-weight: 400;
+}
 
 h1, h2, h3,
 h4, h5, h6 {
   font-family: "Caveat", cursive;
-  color: #222222;
+  color: #8C3503;
   line-height: 1.2em !important;
   margin-bottom: 0;
   margin-top: 0;
@@ -1929,7 +1932,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-gap {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 .section-title {
@@ -1957,12 +1960,16 @@ h1, h2, h3, h4, h5, h6 {
   background-image: -ms-linear-gradient(0deg, #a9bf04da 0%, #b9d104 100%);
 }
 
-.p1-gradient-color, .counter-left h2, .footer-social a:hover i, .single-footer-widget .bb-btn {
+.p1-gradient-color, .counter-left h2, .single-footer-widget .bb-btn {
   background: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
   background: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
-  background: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);
+  background: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+a:hover i{
+  color: #8C3503;
 }
 
 .primary-btn {
@@ -2545,8 +2552,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-area {
-  padding-top: 100px;
-  background-color: #222222;
+  padding-top: 40px;
+  background-color: #A9BF04;
 }
 
 h6 {
@@ -2569,7 +2576,7 @@ h6 {
 }
 
 .footer-social i {
-  color: #cccccc;
+  color: #ffff;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -2768,4 +2775,8 @@ color: #FFFFFF;
 .blur {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+}
+
+.text-color-4{
+  color: #591902 !important;
 }
