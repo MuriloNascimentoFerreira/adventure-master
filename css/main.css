@@ -1972,6 +1972,10 @@ a:hover i{
   color: #8C3503;
 }
 
+a:hover{
+  color: #8C3503;
+}
+
 .primary-btn {
   line-height: 42px;
   padding-left: 30px;
