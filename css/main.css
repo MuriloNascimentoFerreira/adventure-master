@@ -2133,7 +2133,7 @@ a:hover{
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-  color: #fff;
+  color: #8C3503;
   text-decoration: none;
   background-color: transparent;
 }
