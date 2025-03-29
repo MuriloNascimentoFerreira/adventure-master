@@ -147,19 +147,63 @@ $(document).ready(function () {
       .then(response => response.json())
       .then(data => {
         const tbody = document.querySelector('tbody');
-        console.log(tbody);
-
+        
         data.forEach(condutor => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
           <td>${condutor.nome}</td>
           <td>${condutor.apelido}</td>
-          <td>${condutor.email}</td>
+          <td>${condutor.telefone.descricao}-${condutor.telefone.numero}</td>
           <td>${condutor.localidade.cidade}-${condutor.localidade.uf}</td>
           <td>${condutor.linguasEstrangeiras}</td>
           <td>${condutor.escolaridade}</td>
-          <td><i class="fa fa-eye fa-lg"></i></td>
+          <td>
+            <button id="button-detalhes-condutor-${condutor.id}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#detalhes-condutor-${condutor.id}">
+              <i class="fa fa-eye fa-lg"></i>
+            </button>
+          </td>
+
+          <div class="modal fade" id="detalhes-condutor-${condutor.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLongTitle">Detalhes do condutor</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="">
+                      <div><strong>Nome:</strong> ${condutor.nome}</div>
+                      <div><strong>Apelido:</strong> ${condutor.apelido}</div>
+                      <div><strong>E-mail:</strong> ${condutor.email}</div>
+                      <div><strong>Telefone:</strong> ${condutor.telefone.descricao}-${condutor.telefone.numero}</div>
+                      <div><strong>Línguas Estrangeiras:</strong> ${condutor.linguasEstrangeiras}</div>
+                      <div><strong>Escolaridade:</strong> </div>
+                      <div><strong>Cep:</strong> ${condutor.localidade.cep}</div>
+                      <div><strong>Cidade:</strong> ${condutor.localidade.cidade}</div>
+                      <div><strong>UF:</strong> ${condutor.localidade.uf}</div>
+                      <div><strong>País:</strong> ${condutor.localidade.pais}</div>
+                      <div><strong>Roteiros: ${condutor.roteiros}</strong></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         `;
+
+          $(`#detalhes-condutor-${condutor.id}`).on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+          })
           tbody.appendChild(tr);
         });
       })
