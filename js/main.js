@@ -143,7 +143,7 @@ $(document).ready(function () {
   $(document).ready(function () {
     $('#mc_embed_signup').find('form').ajaxChimp();
 
-    fetch('http://localhost:8000/api/condutores')
+    fetch('https://peruacu.murilonascimento.tech/api/condutores')
       .then(response => response.json())
       .then(data => {
         const tbody = document.querySelector('tbody');
