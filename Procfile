@@ -1,1 +1,1 @@
-web: echo "Hello World" && sleep 10000
+web: npm start
